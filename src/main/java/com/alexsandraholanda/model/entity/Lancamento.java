@@ -1,4 +1,4 @@
-package com.alexsandraholanda.minhasfinancas.model.entity;
+package com.alexsandraholanda.model.entity;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -17,8 +17,17 @@ import javax.persistence.Table;
 
 import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
 
+import com.alexsandraholanda.model.enums.StatusLancamento;
+import com.alexsandraholanda.model.enums.TipoLancamento;
+
+import lombok.Builder;
+import lombok.Data;
+
 @Entity
 @Table(name = "lancamento", schema = "financas")
+@Data
+@Builder
+
 public class Lancamento {
 	
 	@Id
@@ -54,5 +63,6 @@ public class Lancamento {
 	@JoinColumn(name = "id_usuario")
 	private Usuario usuario;
 	
+
 	
 }
